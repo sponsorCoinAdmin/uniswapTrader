@@ -1,7 +1,9 @@
+/// Note: poolContract => IUniswapV3Pool
+
 exports.getPoolImmutables = async (poolContract) => {
     const [token0, token1, fee] = await Promise.all([
-      poolContract.token0(),
-      poolContract.token1(),
+      poolContract.token0(), // SPCoin
+      poolContract.token1(), // WETH
       poolContract.fee()
     ])
   
